@@ -1,0 +1,58 @@
+.background-image {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 10;
+  width: 80%;
+
+  .overlay-text {
+    margin: 10px 0;
+    font-weight: normal;
+
+    &__headline {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    &__bold {
+      font-weight: bolder;
+      text-decoration: underline;
+      margin-top: 16px;
+    }
+
+    &__note {
+      font-size: 0.8rem;
+    }
+  }
+
+  .call-to-action-button {
+    background-color: #47eaff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.0rem;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
+  }
+}

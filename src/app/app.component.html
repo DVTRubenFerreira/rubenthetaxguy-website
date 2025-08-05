@@ -1,1 +1,55 @@
-Ruben the Tax Guy
+<ng-container [ngSwitch]="currentViewMode">
+
+
+  <div *ngSwitchCase="viewMode.First">
+    <div><img src="/nerd3.png" alt="nerd3" class="background-image"></div>
+    <div class="overlay">.
+      <div class="overlay-text__headline">Does your tax guy suck?</div>
+      <div class="overlay-text">then</div>
+      <button class="call-to-action-button"
+        (click)="currentViewMode = viewMode.Second">Meet Ruben</button>
+    </div>
+  </div>
+
+
+  <div *ngSwitchCase="viewMode.Second">
+    <div><img src="/tax-guy1.png" alt="tax-guy1" class="background-image"></div>
+    <div class="overlay">
+      <div class="overlay-text__headline">Meet Ruben</div>
+      <div class="overlay-text__headline">"The Tax Guy"</div>
+      <div class="overlay-text">(He doesn't suck)</div>
+      <button class="call-to-action-button"
+        (click)="currentViewMode = viewMode.Third">But is he any good?</button>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="viewMode.Third">
+    <div><img src="/working-hard1.png" alt="working-hard1"
+        class="background-image"></div>
+    <div class="overlay">
+      <div class="overlay-text__headline">So why Ruben?</div>
+
+      <div class="overlay-text__bold">Personalized Face-to-Face Service</div>
+      <div class="overlay-text__note">He ain't no bot or AI - he's a real dude!
+      </div>
+      <div class="overlay-text__note">*The dude in the pic is AI (too good
+        looking)</div>
+
+      <div class="overlay-text__bold">Experience & Intelligence</div>
+      <div class="overlay-text__note">He is actually smart and knows his
+        stuff - Qualified CA(SA) with 17 years of experience</div>
+
+      <div class="overlay-text__bold">Affordability</div>
+      <div class="overlay-text__note">He is really cheap - Not the stingy kinda cheap</div>
+      <div class="overlay-text__note">Lowest rates in the market - we
+        checked</div>
+
+      <div class="overlay-text__bold">Basically... he doesn't suck</div>
+            <div class="overlay-text__note">Like your Tax Guy</div>
+
+      <button class="call-to-action-button"
+        (click)="currentViewMode = viewMode.Third">So what makes him
+        good?</button>
+    </div>
+  </div>
+</ng-container>
