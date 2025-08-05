@@ -6,8 +6,10 @@
     <div class="overlay">.
       <div class="overlay-text__headline">Does your tax guy suck?</div>
       <div class="overlay-text">then</div>
-      <button class="call-to-action-button"
-        (click)="currentViewMode = viewMode.Second">Meet Ruben</button>
+      <div class="button-container">
+        <button class="call-to-action-button"
+          (click)="currentViewMode = viewMode.Second">Meet Ruben</button>
+      </div>
     </div>
   </div>
 
@@ -18,8 +20,10 @@
       <div class="overlay-text__headline">Meet Ruben</div>
       <div class="overlay-text__headline">"The Tax Guy"</div>
       <div class="overlay-text">(He doesn't suck)</div>
-      <button class="call-to-action-button"
-        (click)="currentViewMode = viewMode.Third">But is he any good?</button>
+      <div class="button-container">
+        <button class="call-to-action-button"
+          (click)="currentViewMode = viewMode.Third">But is he any good?</button>
+      </div>
     </div>
   </div>
 
@@ -27,7 +31,7 @@
     <div><img src="/working-hard1.png" alt="working-hard1"
         class="background-image"></div>
     <div class="overlay">
-      <div class="overlay-text__headline">So why Ruben?</div>
+      <div class="overlay-text__headline">Is he any good?</div>
 
       <div class="overlay-text__bold">Personalized Face-to-Face Service</div>
       <div class="overlay-text__note">He ain't no bot or AI - he's a real dude!
@@ -40,16 +44,58 @@
         stuff - Qualified CA(SA) with 17 years of experience</div>
 
       <div class="overlay-text__bold">Affordability</div>
-      <div class="overlay-text__note">He is really cheap - Not the stingy kinda cheap</div>
+      <div class="overlay-text__note">He is really cheap - not the stingy kinda
+        cheap</div>
       <div class="overlay-text__note">Lowest rates in the market - we
         checked</div>
 
       <div class="overlay-text__bold">Basically... he doesn't suck</div>
-            <div class="overlay-text__note">Like your Tax Guy</div>
+      <div class="overlay-text__note">Like your Tax Guy</div>
 
-      <button class="call-to-action-button"
-        (click)="currentViewMode = viewMode.Third">So what makes him
-        good?</button>
+      <div class="button-container">
+        <button class="call-to-action-button"
+          (click)="currentViewMode = viewMode.Contact">I'm Sold!</button>
+        <button class="call-to-action-button"
+          (click)="currentViewMode = viewMode.PriceList">How Cheap?</button>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <div *ngSwitchCase="viewMode.Contact">
+    <div><img src="/having-fun1.png" alt="having-fun1" class="background-image"></div>
+    <div class="overlay">
+      <div class="overlay-text__headline">Get in Touch with Ruben</div>
+      
+      <form class="contact-form">
+        <div class="form-field">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-input" placeholder="Your full name" required>
+        </div>
+        
+        <div class="form-field">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="your.email@example.com" required>
+        </div>
+        
+        <div class="form-field">
+          <label class="form-label">Contact Number</label>
+          <input type="tel" class="form-input" placeholder="+27 123 456 7890" required>
+        </div>
+        
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell Ruben how he can help you..." rows="2" required></textarea>
+        </div>
+        
+        <div class="button-container">
+          <button type="submit" class="call-to-action-button">Send Message</button>
+          <button type="button" class="call-to-action-button" 
+            (click)="currentViewMode = viewMode.Third">Back</button>
+        </div>
+      </form>
     </div>
   </div>
 </ng-container>

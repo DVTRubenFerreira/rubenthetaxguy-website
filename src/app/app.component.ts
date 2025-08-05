@@ -4,7 +4,11 @@ import { Component } from '@angular/core';
 export enum ViewMode {
   First = 'first',
   Second = 'second',
-  Third = 'third'}
+  Third = 'third',
+  PriceList = 'priceList',
+  Contact = 'contact',
+  Query = 'query'
+}
 
 @Component({
   selector: 'app-root',
