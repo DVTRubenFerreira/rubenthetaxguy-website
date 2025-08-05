@@ -3,31 +3,36 @@
   <div class="overlay">
     <div class="overlay-text__headline">Get in Touch with Ruben</div>
     
-    <form class="contact-form" (ngSubmit)="onSubmit()">
+    <form class="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
       <div class="form-field">
         <label class="form-label">Name</label>
-        <input type="text" class="form-input" placeholder="Your full name" required>
+        <input type="text" name="name" ngModel class="form-input" placeholder="Your full name" required>
       </div>
       
       <div class="form-field">
         <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="your.email@example.com" required>
+        <input type="email" name="email" ngModel class="form-input" placeholder="your.email@example.com" required>
       </div>
       
       <div class="form-field">
         <label class="form-label">Contact Number</label>
-        <input type="tel" class="form-input" placeholder="+27 123 456 7890" required>
+        <input type="tel" name="phone" ngModel class="form-input" placeholder="+27 123 456 7890">
       </div>
       
       <div class="form-field">
         <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Tell Ruben how he can help you..." rows="2" required></textarea>
+        <textarea name="message" ngModel class="form-textarea" placeholder="Tell Ruben how he can help you..." rows="2" required></textarea>
       </div>
       
       <div class="button-container">
-        <button type="submit" class="call-to-action-button">Send Message</button>
+        <button type="submit" class="call-to-action-button" [disabled]="isSubmitting || !contactForm.valid">
+          {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+        </button>
         <button type="button" class="call-to-action-button" (click)="onBack()">Back</button>
       </div>
+      
+      <div *ngIf="submitSuccess" class="success-message">Message sent successfully!</div>
+      <div *ngIf="submitError" class="error-message">Error sending message. Please try again.</div>
     </form>
   </div>
 </div>

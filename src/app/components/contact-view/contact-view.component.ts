@@ -1,16 +1,49 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-view',
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './contact-view.component.html',
   styleUrls: ['../../app.component.scss']
 })
 export class ContactViewComponent {
   @Output() goBack = new EventEmitter<void>();
+  
+  isSubmitting = false;
+  submitSuccess = false;
+  submitError = false;
 
-  onSubmit() {
-    // Handle form submission logic here
-    console.log('Form submitted');
+  constructor(private firestore: AngularFirestore) {}
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.isSubmitting = true;
+      this.submitError = false;
+      
+      const formData = {
+        name: form.value.name,
+        email: form.value.email,
+        phone: form.value.phone,
+        message: form.value.message,
+        timestamp: new Date()
+      };
+
+      this.firestore.collection('leads').add(formData)
+        .then(() => {
+          console.log('Lead submitted to Firebase');
+          this.submitSuccess = true;
+          this.isSubmitting = false;
+          form.reset();
+        })
+        .catch(error => {
+          console.error('Error submitting lead:', error);
+          this.submitError = true;
+          this.isSubmitting = false;
+        });
+    }
   }
 
   onBack() {
