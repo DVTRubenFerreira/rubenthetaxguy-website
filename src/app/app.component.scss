@@ -3,11 +3,12 @@
   height: 100dvh;
   display: flex;
   margin: 0 auto;
+  position: relative;
 }
 
 .overlay {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -24,10 +25,18 @@
       margin-bottom: 10px;
     }
 
-    &__bold {
+    &__sub-heading {
       font-weight: bolder;
       text-decoration: underline;
       margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    &__bold {
+      font-weight: bolder;
+      margin-top: 16px;
+            font-size: 1.2rem;
+
     }
 
     &__note {
@@ -50,7 +59,7 @@
     font-size: 1.0rem;
     cursor: pointer;
     margin-top: 4px;
-    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), 0 1.5px 3px rgba(0, 0, 0, 0.12);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     &:hover {
@@ -77,7 +86,7 @@
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: white;
+    color: #fff; // Ensures better contrast for accessibility
   }
 
   .form-input,
@@ -87,7 +96,7 @@
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.98);
     box-sizing: border-box;
 
     &:focus {
