@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production && mv dist/rubenthetaxguy-website/browser/* dist/rubenthetaxguy-website/ 2>/dev/null || true && rm -rf dist/rubenthetaxguy-website/browser",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "go": "pnpm build && firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
