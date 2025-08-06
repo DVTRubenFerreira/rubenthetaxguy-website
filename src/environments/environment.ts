@@ -1,5 +1,3 @@
-
-
 export const firebaseConfig = {
   apiKey: "AIzaSyAirm9ngESotJhCwhk_EFvt-73TTMYd-7w",
   authDomain: "rubenthetaxguy.firebaseapp.com",
