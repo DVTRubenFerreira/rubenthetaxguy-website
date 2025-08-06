@@ -5,6 +5,9 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BackgroundImages } from '../../models/backgroundImages.interface';
 import { BackgroundImageComponent } from '../../shared/background-image/background-image.component';
 
+// Declare gtag function for TypeScript
+declare function gtag_report_conversion(url?: string): boolean;
+
 @Component({
   selector: 'app-contact-view',
   imports: [
@@ -51,6 +54,11 @@ export class ContactViewComponent {
           this.submitSuccess = true;
           this.isSubmitting = false;
           form.reset();
+
+          // Track conversion with Google Ads
+          if (typeof gtag_report_conversion !== 'undefined') {
+            gtag_report_conversion();
+          }
         })
         .catch((error) => {
           console.error('Error submitting lead:', error);
