@@ -12,8 +12,16 @@ export class InfoFirstView {
   @Output() nextView = new EventEmitter<void>();
 
   public backgroundImages: BackgroundImages = {
-    desktop: ['/nerd1-desktop.jpg', '/nerd2-desktop.jpg', '/nerd3-desktop.jpg'],
-    mobile: ['/nerd1-mobile.jpg', '/nerd2-mobile.jpg', '/nerd3-mobile.jpg'],
+    desktop: [
+      { src: '/nerd1-desktop.jpg', alt: 'nerd-1' },
+      { src: '/nerd2-desktop.jpg', alt: 'nerd-2' },
+      { src: '/nerd3-desktop.jpg', alt: 'nerd-3' },
+    ],
+    mobile: [
+      { src: '/nerd1-mobile.jpg', alt: 'nerd-1' },
+      { src: '/nerd2-mobile.jpg', alt: 'nerd-2' },
+      { src: '/nerd3-mobile.jpg', alt: 'nerd-3' },
+    ],
   };
 
   onMeetRuben() {

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BackgroundImages } from '../../models/backgroundImages.interface';
+import { BackgroundImages, ImageProperties } from '../../models/backgroundImages.interface';
 
 @Component({
   selector: 'app-background-image',
@@ -9,7 +9,7 @@ import { BackgroundImages } from '../../models/backgroundImages.interface';
 export class BackgroundImageComponent implements OnInit {
   @Input() backgroundImages: BackgroundImages | undefined;
 
-  public imagesForCurrentView: string[] = [];
+  public imagesForCurrentView: ImageProperties[] = [];
   public imageIndex: number = 0;
   public isMobile: boolean = window.innerWidth < 768;
 

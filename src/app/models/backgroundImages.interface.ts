@@ -1,4 +1,9 @@
 export interface BackgroundImages {
-  desktop: string[];
-  mobile: string[];
+  desktop: ImageProperties[];
+  mobile: ImageProperties[];
+}
+
+export interface ImageProperties {
+  src: string;
+  alt: string;
 }
