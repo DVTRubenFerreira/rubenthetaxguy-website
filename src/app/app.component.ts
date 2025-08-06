@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { InfoFirstView } from './components/info-first/info-first.component';
-import { InfoSecondView } from './components/info-second/info-second.component';
-import { InfoThirdView } from './components/info-third/info-third.component';
-import { ContactViewComponent } from './components/contact-view/contact-view.component';
+import { InfoFirstView } from './views/info-first/info-first.component';
+import { InfoSecondView } from './views/info-second/info-second.component';
+import { InfoThirdView } from './views/info-third/info-third.component';
+import { ContactViewComponent } from './views/contact-view/contact-view.component';
 
 export enum ViewMode {
   First = 'first',
